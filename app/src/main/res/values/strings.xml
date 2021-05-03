@@ -6,4 +6,5 @@
     <string name="capital_format">Capital Name : %s</string>
     <string name="population_format">Country Population : %d</string>
     <string name="region_format">Country Region : %s</string>
+    <string name="temp_format">Capital Temperature : %s *C</string>
 </resources>

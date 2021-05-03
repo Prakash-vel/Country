@@ -8,6 +8,7 @@ import com.example.country.databasehander.CountryData
 import com.example.country.databasehander.CountryDatabaseDao
 import com.example.country.datahandler.CountryApiObj
 import com.example.country.datahandler.CountryProperty
+import com.example.country.datahandler.WeatherApi
 import kotlinx.coroutines.*
 
 class TitleViewModel(private val dataSource: CountryDatabaseDao) :ViewModel() {
@@ -67,6 +68,9 @@ class TitleViewModel(private val dataSource: CountryDatabaseDao) :ViewModel() {
 
         Log.i("hello ","getproperties called")
         coroutineScope.launch {
+
+
+
             if(key != null){
                 val string="%${key}%"
                 _dbResult.value=dataSource.getCountries(string)

@@ -11,6 +11,8 @@ import com.example.country.R
 
 import com.example.country.databasehander.CountryData
 import com.example.country.databasehander.CountryDatabaseDao
+import com.example.country.datahandler.WeatherApi
+import com.example.country.datahandler.WeatherPropertyX
 import kotlinx.android.synthetic.main.fragment_detail.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +36,7 @@ class DetailViewModel(
     val countryData: LiveData<CountryData>
       get() = _countryData
 
+    private val weatherProperty=MutableLiveData<WeatherPropertyX>()
     init{
         getById()
     }
@@ -42,12 +45,29 @@ class DetailViewModel(
 
             _countryData.value=dataSource.getById(selectedId)
             Log.i("hello","selected ${countryData.value}")
+            val weather= WeatherApi.retrofitService.getPropertiesByCity(_countryData.value!!.capital,"54db2f5f9abaa843d3e887adcd05907f")
+
+            try {
+                val weatherResults=weather.await()
+                Log.i("hello","$weatherResults")
+                if (weatherResults != null) {
+
+                    weatherProperty.value=weatherResults
+                    Log.i("hello","result $weatherResults")
+
+                }
+            }catch (e: Exception){
+                Log.i("hello","error $e")
+            }
         }
     }
-    fun showPopulation():String{
-       return  countryData.value?.population.toString()
-    }
+//    fun showPopulation():String{
+//       return  countryData.value?.population.toString()
+//    }
 
+    val countryTemp=Transformations.map(weatherProperty){
+        application.applicationContext.getString(R.string.temp_format,(Math.round((it.main.temp-273.15)*10.0)/10.0).toString())
+    }
     val countryName=Transformations.map(countryData){
         application.applicationContext.getString(R.string.name_format,it.name)
     }

@@ -25,22 +25,22 @@ import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYouListener
 //import com.caverock.androidsvg.SVG;
 //import com.caverock.androidsvg.SVGParseException;
 
-//@BindingAdapter("setImg")
-//fun setImage(imageView: ImageView,url: String?){
-//    url?.let {
-//        val imgUri = url.toUri().buildUpon().scheme("https").build()
-//        Log.i("hello","image uri=$imgUri")
-//        Glide.with(imageView.context)
-//                .load(imgUri)
-//                .apply(RequestOptions()
-//                        .placeholder(R.drawable.loading_animation)
-//                        .error(R.drawable.ic_broken_image))
-//                 .fitCenter()
-//                .into(imageView)
-//
-//    }
-//
-//}
+@BindingAdapter("setImg")
+fun setImage(imageView: ImageView,url: String?){
+    url?.let {
+        val imgUri = url.toUri().buildUpon().scheme("https").build()
+        Log.i("hello","image uri=$imgUri")
+        Glide.with(imageView.context)
+                .load(imgUri)
+                .apply(RequestOptions()
+                        .placeholder(R.drawable.loading_animation)
+                        .error(R.drawable.ic_broken_image))
+                 .fitCenter()
+                .into(imageView)
+
+    }
+
+}
 //@BindingAdapter("data")
 //fun bindRecyclerView(recyclerView: RecyclerView,countryData: List<CountryData>?){
 //    Log.i("hello","recyclerview Binder called$countryData")
