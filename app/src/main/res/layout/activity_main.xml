@@ -38,6 +38,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/weather_description_icons"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:setImg="@{mainViewModel.weatherIcon}"

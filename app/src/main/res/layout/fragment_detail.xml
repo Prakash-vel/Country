@@ -52,62 +52,29 @@
 
                 <TextView
                     android:id="@+id/countryNameText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
 
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:elevation="5dp"
-                    android:fontFamily="@font/eb_garamond"
                     android:text="@{detailViewModel.countryName}"
-                    android:textSize="20sp" />
+                    style="@style/countryDetailsStyle" />
 
                 <TextView
                     android:id="@+id/capitalText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:elevation="5dp"
-                    android:fontFamily="@font/eb_garamond"
-                    android:text="@{detailViewModel.countryCapital}"
-                    android:textSize="20sp" />
+                    style="@style/countryDetailsStyle"
+                    android:text="@{detailViewModel.countryCapital}" />
 
                 <TextView
                     android:id="@+id/capitalTemp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/eb_garamond"
                     android:text="@{detailViewModel.countryTemp}"
-                    android:textSize="20sp" />
+                    style="@style/countryDetailsStyle"  />
 
                 <TextView
                     android:id="@+id/regionText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:elevation="5dp"
-                    android:fontFamily="@font/eb_garamond"
                     android:text="@{detailViewModel.countryRegion}"
-                    android:textSize="20sp" />
+                    style="@style/countryDetailsStyle"  />
 
                 <TextView
                     android:id="@+id/populationText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:elevation="5dp"
-                    android:fontFamily="@font/eb_garamond"
                     android:text="@{detailViewModel.countryPopulation}"
-                    android:textSize="20sp" />
+                    style="@style/countryDetailsStyle" />
 
 
             </LinearLayout>
