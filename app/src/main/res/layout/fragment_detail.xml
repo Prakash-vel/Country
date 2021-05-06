@@ -10,106 +10,92 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".detail.DetailFragment"
         android:background="@drawable/background">
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            app:imageUrl="@{detailViewModel.countryData.flag}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/countryNameText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="30dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/eb_garamond"
-            android:text="@{detailViewModel.countryName}"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        <TextView
-            android:id="@+id/capitalText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/eb_garamond"
-            android:text="@{detailViewModel.countryCapital}"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/countryNameText" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{detailViewModel.countryData.flag}" />
 
-        <TextView
-            android:id="@+id/regionText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/eb_garamond"
-            android:text="@{detailViewModel.countryRegion}"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/capitalTemp" />
+            <TextView
+                android:id="@+id/countryNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/eb_garamond"
+                android:text="@{detailViewModel.countryName}"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/populationText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/eb_garamond"
-            android:text="@{detailViewModel.countryPopulation}"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regionText"
-            app:layout_constraintVertical_bias="0.029" />
+            <TextView
+                android:id="@+id/capitalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/eb_garamond"
+                android:text="@{detailViewModel.countryCapital}"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/capitalTemp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:fontFamily="@font/eb_garamond"
-            android:text="@{detailViewModel.countryTemp}"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/capitalText" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/capitalTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/eb_garamond"
+                android:text="@{detailViewModel.countryTemp}"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/regionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/eb_garamond"
+                android:text="@{detailViewModel.countryRegion}"
+                android:textSize="20sp"
+                 />
+
+            <TextView
+                android:id="@+id/populationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/eb_garamond"
+                android:text="@{detailViewModel.countryPopulation}"
+                android:textSize="20sp"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 </layout>
